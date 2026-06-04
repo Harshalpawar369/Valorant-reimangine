@@ -1,8 +1,8 @@
 import React from 'react'
-import Navbar from './component/Navbar'
-import Landingpage from './Landingpage'
-import Backsec from './Backsec'
-import Footer from './component/Footer'
+import Navbar from '../../next/app/component/Navbar'
+import Landingpage from '../../next/app/Landingpage'
+import Backsec from '../../next/app/Backsec'
+import Footer from '../../next/app/component/Footer'
 function Home() {
   return (
     <div>

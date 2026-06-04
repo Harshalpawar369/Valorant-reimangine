@@ -1,24 +1,27 @@
-import React from "react";
-import "./css/Backsec.css";
-import valoshoot from "./assets/video/valoshoot.gif";
-import Shootval from "./assets/video/Shootval.gif";
-import gemini from "./assets/video/gemini.gif";
-import sky from "./assets/image/sky.jpg";
-import clone from "./assets/image/clone.png";
-import phonix from "./assets/image/phonix.jpg";
-import valorant from "./assets/image/valorant.jpg";
-import gas from "./assets/image/7469.jpg"
-import ui from "./assets/image/ui.jpg"
-import igv from "./assets/video/igv.mp4"
-import { useGSAP } from "@gsap/react";
+"use client";
+import React from 'react'
+
+import './css/style.css'
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import gsap from "gsap";
-
 gsap.registerPlugin(ScrollTrigger);
-
-function Backsec() {
+function Landingpage() {
   useGSAP(() => {
-    const tl = gsap.timeline({
+ let tl = gsap.timeline();
+ tl.from(".text-hero",{
+  y:20,
+  opacity:0,
+  scale:0.8,
+  duration:1,
+  delay:1
+ })
+ tl.from(".wel-text",{
+  y:20,
+  opacity:0,
+  duration:1
+ })
+  const t1 = gsap.timeline({
       delay:0.7,
       scrollTrigger: {
         trigger: ".sec1",
@@ -30,7 +33,7 @@ function Backsec() {
       },
     });
 
-    tl.to(".txt-img", { scale: 15, opacity: 0 }).to(
+    t1.to(".txt-img", { scale: 15, opacity: 0 }).to(
       ".media-item",
       {
         width: "100%",
@@ -43,9 +46,9 @@ function Backsec() {
       "<"
     );
 
-    tl.to(".sec1", { backgroundColor: "#ffffff" });
+    t1.to(".sec1", { backgroundColor: "#ffffff" });
 
-    tl.to(
+    t1.to(
       ".media-item:not(.media-6)",
       {
         x: () => {
@@ -68,9 +71,9 @@ function Backsec() {
       "<"
     );
 
-    tl.to(".media-6", {
+    t1.to(".media-6", {
       scale: 0.5,
-      y: 180,
+      y: 100,
       duration: 0.2,
     })
       .to(".media6-quote", {
@@ -84,11 +87,15 @@ function Backsec() {
         duration: 0.5,
         stagger: 0.5,
       });
-  }, []);
-
+  });
   return (
-    <>
-      <div className="sec1">
+   <div>
+   <div className='img-hero'>
+     <img src= './assets/image/hero.png' alt="ERROR 404"   className='imgu' />
+     <div className='text-hero'><h1>Hello</h1>
+     <p className='wel-text'>Welocome to our website Valorant</p></div>
+   </div>
+    <div className="sec1">
         <div className="txt-img">
           <p>Calm Before</p>
           <p>The Storm</p>
@@ -96,22 +103,22 @@ function Backsec() {
 
         <div className="media-container">
           <div className="media-item media-1 inward">
-            <img src={gas} alt="" />
+            <img src="./assets/image/7469.jpg" alt="" />
           </div>
           <div className="media-item media-2 left-inward">
-            <img src={valorant} alt="" />
+            <img src="./assets/image/valorant.jpg" alt="" />
           </div>
           <div className="media-item media-3 right-inward">
-            <img src={phonix} alt="" />
+            <img src="./assets/image/phonix.jpg" alt="" />
           </div>
           <div className="media-item media-4 inward">
-            <img src={clone} alt="" />
+            <img src="./assets/image/clone.png" alt="" />
           </div>
           <div className="media-item media-5 left-inward">
-            <img src={ui} alt="" />
+            <img src="./assets/image/ui.jpg" alt="" />
           </div>
           <div className="media-item media-6 ">
-            <img src={sky} alt="" />
+            <img src="./assets/image/sky.jpg" alt="" />
             <div className="media6-quote">
               In the silence, legends are born.
             </div>
@@ -136,11 +143,14 @@ function Backsec() {
           your legacy and feel the unmatched thrill of victory.
         </p>
         <div className="video-container left-inward">
-          <video src= {igv} muted autoPlay loop playsInline></video>
+          <video src= "./assets/video/igv.mp4" muted autoPlay loop playsInline></video>
         </div>
       </div>
-    </>
-  );
+   
+
+  
+   </div>
+  )
 }
 
-export default Backsec;
+export default Landingpage

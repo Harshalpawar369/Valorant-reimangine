@@ -1,4 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Asimovian&family=Audiowide&family=Black+Ops+One&family=Iceberg&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Zen+Dots&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Black+Ops+One&family=Iceberg&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Zen+Dots&display=swap');
+
 
 .black-ops-one-regular {
   font-family: "Black Ops One", system-ui;
@@ -127,21 +129,74 @@
   font-weight: 900;
   font-style: italic;
 }
-.asimovian-regular {
-  font-family: "Asimovian", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
+
 
 html, body {
   margin: 0;
   padding: 0;
+  width: 100%;
   overflow-x: hidden;
 }
-
 * {
   box-sizing: border-box;
 }
+.img-hero ::-webkit-scrollbar{
+  display: none;
+}
+
+.img-hero {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    color: white;
+    position: relative; 
+}
+.imgu{
+   position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: 0;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.text-hero {
+    z-index: 3;
+    font-size: 3.5vmax;
+    font-family: "Black Ops One", system-ui;
+    position: absolute; 
+    top: 15%;         
+    right: 5%;        
+    width: 20%;       
+    text-align: right;
+}
+.wel-text{
+  font-weight: 300;
+  font-size: 3vmax;
+  
+}
+
+@media (max-width: 800px) {
+  .img-hero{
+    object-fit: cover;
+    align-items: center;
+  }
+  .imgu{
+    object-fit: cover;
+    position: relative;
+    
+  }
+  .wel-text {
+    display: none;
+  }
+  .text-hero{
+    margin-right: 15%;
+  }
+}
+
+
 
 
 .sec1 {
@@ -158,8 +213,8 @@ html, body {
 
 .txt-img {
   text-align: center;
-  font-size: 6vmax;
-  font-family: "Zen Dots", sans-serif;
+  font-size: 7.5vmax;
+  font-family: "Black Ops One", sans-serif;
   font-weight: bold;
   /*background-image: url(https://tse3.mm.bing.net/th/id/OIP.Rbnd5ETeTbAouSH1PiMljQHaEK?pid=Api&P=0&h=180);
   background-size: cover;
@@ -177,7 +232,7 @@ html, body {
   left: 0;
   width: 100%;
   height: 100%;
-   perspective: 1000px; /* controls depth */
+   perspective: 1000px; 
   perspective-origin: center;
 
 }
@@ -199,7 +254,7 @@ html, body {
   transform: translateZ(-120px) rotateX(16deg);
 }
 
-/* Optional: on hover, push it further in */
+
 .media-item.inward:hover {
   transform: translateZ(-220px) rotateX(22deg);
 }
@@ -268,32 +323,32 @@ html, body {
   margin-bottom: 80px;
   
 }
-/* Left-side inward tilt */
+
 .media-item.left-inward {
   transform: translateZ(-120px) rotateY(-16deg);
 }
 
-/* Optional: push further in on hover */
+
 .media-item.left-inward:hover {
   transform: translateZ(-220px) rotateY(-22deg);
 }
-/* Right-side inward tilt */
+
 .media-item.right-inward {
   transform: translateZ(-120px) rotateY(16deg);
 }
 
-/* Optional: push further in on hover */
+
 .media-item.right-inward:hover {
   transform: translateZ(-220px) rotateY(22deg);
 }
 .media6-quote {
   position: absolute;
-  bottom: 20px; /* start hidden below */
-  left: 0%;
+  bottom: 20px; 
+  left: 5%;
   transform: translateX(0.6%);
-  font-family: "Zen Dots", sans-serif;
+  font-family: "Black Ops One", sans-serif;
   font-size: 5vmax;
-  color: black; /* since background turns white */
+  color: black; 
   opacity: 0;
   pointer-events: none;
   white-space: nowrap;
@@ -305,12 +360,13 @@ html, body {
 
 
 .parag{
-  width:75%;
+  width:60%;
   height: 40%;
-  justify-self: left;
+  justify-self: center;
   align-self: flex-start;
   background-color: white;
-  font-size: 4vmax;
+  font-size: 3.5vmax;
+  font-family: "Black Ops One", sans-serif;
   opacity: 0;
   color: black;
   z-index: 0;
@@ -333,14 +389,16 @@ html, body {
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
-  font-family: "Iceberg", sans-serif;
+ 
+  font-family: "Black Ops One", sans-serif;
   color: ghostwhite;
   font-size: 2.5vmax;
   background-color: rgb(255, 70, 85);
   text-align: center;
 }
 .txt-con p{
-  padding: 5px;
+  padding: 0.5%;
+  text-align: justify;
 }
 .video-container{
   width: 45%;
@@ -385,3 +443,4 @@ html, body {
   
   }
 }
+
