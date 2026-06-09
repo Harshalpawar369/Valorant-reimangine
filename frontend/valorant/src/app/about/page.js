@@ -5,6 +5,8 @@ import { useGSAP } from "@gsap/react";
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
+import Navbar from "../components/nav";
+import Footer from "../components/footer";
 import "../css/about.css"
 
 gsap.registerPlugin(ScrollTrigger);
@@ -93,6 +95,7 @@ function About() {
 
   return (
     <>
+    <Navbar />
     <div className="container">
       <div className="text" ref={textRef}>
         WANNA FIGHT
@@ -101,7 +104,7 @@ function About() {
       <div className="character">
         
         <img
-          src="./assets/image/enoiz019r2t41.png"
+          src="/assets/image/enoiz019r2t41.png"
           alt="Character"
           className="character-img"
         />
@@ -125,6 +128,7 @@ function About() {
            Take on foes across Competitive and Unranked modes as well 
            as Deathmatch and Spike Rush. 
          </p></div></div>
+     <Footer />
     </>
   )
 }

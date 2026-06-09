@@ -4,6 +4,8 @@ import React from 'react'
 import './css/style.css'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
+import Navbar from "./components/nav"
+import Footer from './components/footer'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 function Landingpage() {
@@ -90,8 +92,9 @@ function Landingpage() {
   });
   return (
    <div>
+    <Navbar/>
    <div className='img-hero'>
-     <img src= './assets/image/hero.png' alt="ERROR 404"   className='imgu' />
+     <img src="/assets/image/hero.png" alt="ERROR 404"   className='imgu' />
      <div className='text-hero'><h1>Hello</h1>
      <p className='wel-text'>Welocome to our website Valorant</p></div>
    </div>
@@ -103,22 +106,22 @@ function Landingpage() {
 
         <div className="media-container">
           <div className="media-item media-1 inward">
-            <img src="./assets/image/7469.jpg" alt="" />
+            <img src="/assets/image/7469.jpg" alt="" />
           </div>
           <div className="media-item media-2 left-inward">
-            <img src="./assets/image/valorant.jpg" alt="" />
+            <img src="/assets/image/valorant.jpg" alt="" />
           </div>
           <div className="media-item media-3 right-inward">
-            <img src="./assets/image/phonix.jpg" alt="" />
+            <img src="/assets/image/phonix.jpg" alt="" />
           </div>
           <div className="media-item media-4 inward">
-            <img src="./assets/image/clone.png" alt="" />
+            <img src="/assets/image/clone.png" alt="" />
           </div>
           <div className="media-item media-5 left-inward">
-            <img src="./assets/image/ui.jpg" alt="" />
+            <img src="/assets/image/ui.jpg" alt="" />
           </div>
           <div className="media-item media-6 ">
-            <img src="./assets/image/sky.jpg" alt="" />
+            <img src="/assets/image/sky.jpg" alt="" />
             <div className="media6-quote">
               In the silence, legends are born.
             </div>
@@ -143,12 +146,12 @@ function Landingpage() {
           your legacy and feel the unmatched thrill of victory.
         </p>
         <div className="video-container left-inward">
-          <video src= "./assets/video/igv.mp4" muted autoPlay loop playsInline></video>
+          <video src="/assets/video/igv.mp4" muted autoPlay loop playsInline></video>
         </div>
       </div>
    
 
-  
+    <Footer/>
    </div>
   )
 }
