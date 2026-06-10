@@ -12,7 +12,7 @@ async function createPost(req,res){
 
       if (!req.file) return res.status(400).json({ message: "No image provided" });
 
-        const uploadResponse = await uploadFile(req.file.buffer, Date.now() + "-" + uuid.v7);
+        const uploadResponse = await uploadFile(req.file.buffer, Date.now() + "-" + uuid.v7n);
 
         const newPost = await postModel.create({
             wallpapperName: req.body.wallpapperName,

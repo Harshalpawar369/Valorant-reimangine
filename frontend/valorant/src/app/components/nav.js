@@ -1,32 +1,6 @@
-"use client";
-import React, { useState } from 'react'
-
 import "../css/style.css"
-import { useGSAP } from '@gsap/react';
-import gsap from 'gsap';
 import Link from 'next/link';
 function nav() {
-   
-  useGSAP(() => {
-    let t1 = gsap.timeline();
-    t1.from(".nav", {
-      y: -30,
-      duration: 0.5,
-      opacity: 0.3,
-      delay: 0.5,
-      
-    });
-    t1.from(".head a", {
-      y: -30,
-      opacity: 0,
-      duration: 0.5,
-      delay: 0.2,
-      stagger: 0.2,
-    });
-  });
-
-
-    const [a, setA] = useState(false);
   return (
    <>
    <div className="nav">
@@ -35,12 +9,12 @@ function nav() {
       </path>
       </svg></div>
     <div className="icon">
-        <div onClick={() => setA(!a)}>
-      <img src="/assets/image/Menu.png" alt="" width={10} height={15}/>
-        </div></div>
+        <button type="button" data-nav-toggle aria-controls="site-nav-menu" aria-expanded="false">
+      <img src="/assets/image/Menu.png" alt="Open menu" width={10} height={15}/>
+        </button></div>
    
    
-        <div className={`head ${a ? 'active' : ''}`}>
+        <div className="head" id="site-nav-menu" data-nav-menu>
          
          <div><Link href="/">Home</Link></div>
         <div><Link href="/about">About</Link></div>

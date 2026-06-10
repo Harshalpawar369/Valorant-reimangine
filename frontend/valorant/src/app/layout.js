@@ -1,4 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 
@@ -18,11 +19,17 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const navScriptSrc =
+    process.env.NODE_ENV === "production"
+      ? "/scripts.min/site/nav-menu.js"
+      : "/scripts/site/nav-menu.js";
+
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      
-      <body>{children}</body>
- 
+      <body>
+        {children}
+        <Script src={navScriptSrc} strategy="afterInteractive" />
+      </body>
     </html>
   );
 }

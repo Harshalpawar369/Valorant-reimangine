@@ -6,13 +6,16 @@ const app = express();
 
 const authRoutes = require('./routes/authRoutes.js')
 const postRoutes = require('./routes/postRoutes.js')
+const aiRoutes = require('./routes/aiRoutes.js')
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(cookieParser())
+app.use(cors({ origin: true, credentials: true }));
 
 app.use('/api/valorant', authRoutes);
 app.use('/api/valorant', postRoutes)
+app.use('/api/valorant/ai', aiRoutes)
 
 
 app.get("/", function(req,res){

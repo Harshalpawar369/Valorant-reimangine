@@ -6,6 +6,7 @@
   "dependencies": {
     "@imagekit/javascript": "^5.4.1",
     "@imagekit/nodejs": "^7.7.0",
+    "@langchain/openai": "^1.4.7",
     "bcrypt": "^6.0.0",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.6",

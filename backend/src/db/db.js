@@ -4,7 +4,8 @@ async function connectDB(){
     const uri = process.env.MONGODB_URI;
 
     if (!uri) {
-        throw new Error("MONGODB_URI is not defined. Check backend/src/.env");
+        console.warn("MONGODB_URI is not defined. Skipping database connection.");
+        return;
     }
 
     try {
