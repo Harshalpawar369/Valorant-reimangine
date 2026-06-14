@@ -1,6 +1,6 @@
 "use client";
 import React from 'react'
-
+import { ReactLenis } from 'lenis/react';
 import './css/style.css'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
@@ -8,7 +8,9 @@ import Navbar from "./components/nav"
 import Footer from './components/footer'
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
+
 function Landingpage() {
+
   useGSAP(() => {
  let tl = gsap.timeline();
  tl.from(".text-hero",{
@@ -91,6 +93,7 @@ function Landingpage() {
       });
   });
   return (
+    <ReactLenis root options={{ lerp: 0.1, duration: 1.5, smoothWheel: true }}>
    <div>
     <Navbar/>
    <div className='img-hero'>
@@ -153,6 +156,7 @@ function Landingpage() {
 
     <Footer/>
    </div>
+   </ReactLenis>
   )
 }
 

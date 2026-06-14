@@ -8,7 +8,7 @@ html,body{
   align-items: center;
   justify-content: space-between;
 
-  background-image: url("../assets/video/city-valorant.gif");
+  background-image: url("/assets/video/city-valorant.gif");
   background-repeat: no-repeat;         
   background-size: cover;               
   background-position: center center;   
@@ -95,4 +95,79 @@ padding: 5%;
   
   width: 100%;
   margin-left: 0%;
+}
+@media screen and (max-width: 1024px) {
+  .tx {
+    margin-left: 40%; /* Reduced extreme margin */
+  }
+  .jus1 p {
+    margin-left: 20%;
+  }
+  .heading {
+    margin-left: 30%;
+    width: 60%;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column; 
+    justify-content: center;
+    text-align: center;
+    padding: 10% 0;
+  }
+  .text {
+    font-size: 8vw; 
+    padding: 2vmin;
+  }
+  .character-img {
+    height: 40vh; 
+    margin-top: 5%;
+  }
+  .jus, .jus1 {
+    height: auto; 
+    min-height: 100vh;
+  }
+  .tx {
+    margin-left: 5%; 
+    margin-right: 5%;
+    font-size: 3.5vw;
+    text-align: center;
+  }
+  .jus1 p {
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-right: 0;
+    font-size: 3.5vw;
+    text-align: center;
+  }
+  .heading {
+    margin-left: 5%;
+    width: 90%;
+    font-size: 6vw;
+    margin-top: 15%;
+  }
+  .heading p {
+    font-size: 3vw;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  .text {
+    font-size: 10vw;
+  }
+  .character-img {
+    height: 35vh;
+  }
+  .tx, .jus1 p {
+    font-size: 4.5vw;
+  }
+  .heading {
+    font-size: 8vw;
+  }
+  .heading p {
+    font-size: 4vw;
+  }
 }

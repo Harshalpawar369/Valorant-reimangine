@@ -8,6 +8,7 @@ import gsap from "gsap";
 import Navbar from "../components/nav";
 import Footer from "../components/footer";
 import "../css/about.css"
+import { ReactLenis } from 'lenis/react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -94,7 +95,8 @@ function About() {
   }, []);
 
   return (
-    <>
+
+    <ReactLenis root options={{ lerp: 0.1, duration: 1.5, smoothWheel: true }}>
     <Navbar />
     <div className="container">
       <div className="text" ref={textRef}>
@@ -129,7 +131,8 @@ function About() {
            as Deathmatch and Spike Rush. 
          </p></div></div>
      <Footer />
-    </>
+
+   </ReactLenis>
   )
 }
 

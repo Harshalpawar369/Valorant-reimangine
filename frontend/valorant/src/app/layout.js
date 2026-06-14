@@ -25,7 +25,11 @@ export default function RootLayout({ children }) {
       : "/scripts/site/nav-menu.js";
 
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html
+      lang="en"
+      className={`${geistSans.variable} ${geistMono.variable}`}
+      suppressHydrationWarning
+    >
       <body>
         {children}
         <Script src={navScriptSrc} strategy="afterInteractive" />

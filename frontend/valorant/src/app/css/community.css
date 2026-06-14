@@ -1,0 +1,142 @@
+
+
+.community-container{
+    font-family: "Black Ops One", "Poppins",sans-serif,Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 50;
+    color: ghostwhite;
+    font-size: 2vmax;
+    z-index: 0;
+    position: absolute;
+    top: 0%;
+   
+}
+
+.communityVideo{
+    width: 100vw;
+    z-index: 0;
+    position: absolute;
+    object-fit: cover
+  
+    
+  
+}
+
+.community-content{
+    color: ghostwhite;
+   
+    font-family: "Black Ops One", "Poppins",sans-serif,Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+     z-index: 100;
+     position: relative;
+    
+}
+.content-header{
+   margin-top: 20%;
+     margin-left: 5%;
+      font-size: 3.9vmax;
+
+}
+
+.content-text{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 35%;
+    margin-top: 5%;
+    margin-left: 5%;
+
+}
+
+.content-paragraph1{
+    font-weight: 50;
+    font-size: small;
+    text-align: justify;
+    width: 25%;
+    
+}
+
+.content-paragraph2{
+    font-weight: 50;
+    font-size: small;
+    text-align: justify;
+    width: 25%;
+    
+}
+
+.post-container {
+  margin-top: 10vh;
+  padding: 20px 0;
+  background: rgba(0, 0, 0, 0.6); /* Adds a dark backing so it stands out from the video */
+  border-radius: 15px;
+}
+
+.wallpaper-title {
+  padding-left: 20px;
+  font-family: "Black Ops One", "poppins", sans-serif;
+  color: #FF4655; /* Valorant Red */
+}
+
+.wallpaper-scroll-wrapper {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto; /* This creates the native side-scroll */
+  padding: 20px;
+  
+  /* Hides the ugly scrollbar on modern browsers but keeps the function */
+  scrollbar-width: thin;
+  scrollbar-color: #FF4655 #111;
+}
+
+.wallpaper-scroll-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+.wallpaper-scroll-wrapper::-webkit-scrollbar-thumb {
+  background: #FF4655;
+  border-radius: 10px;
+}
+
+/* --- Individual Wallpaper Cards --- */
+.wallpaper-card {
+  min-width: 300px;
+  background: #111;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0; /* Prevents cards from squishing */
+  border: 1px solid #333;
+  transition: transform 0.3s ease;
+}
+
+.wallpaper-card:hover {
+  transform: translateY(-5px);
+  border-color: #FF4655;
+}
+
+.wallpaper-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.wallpaper-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+
+.wallpaper-name {
+  font-weight: bold;
+  font-family: "poppins", sans-serif;
+}
+
+.action-buttons button {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: transform 0.2s ease;
+}
+
+.action-buttons button:hover {
+  transform: scale(1.2);
+}
