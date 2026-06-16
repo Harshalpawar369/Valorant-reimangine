@@ -73,14 +73,14 @@ function Community() {
       <Navbar />
       
       <div className="community-container">
-        {/* Added videoRef here so GSAP can control it */}
+
         <video
           ref={videoRef}
           src="/assets/video/valo7.mp4"
           className="communityVideo"
           muted
           playsInline
-          // Removed autoPlay so GSAP takes full control of the playback
+     
         ></video>
 
         <div className="community-content">

@@ -99,18 +99,18 @@ res.status(200).json({
 async function isLoggedIn(req, res) {
     const token = req.cookies.usertoken;
     if (!token) {
-        return res.status(200).json({ loggedIn: false });
+        return res.status(200).json({ isLoggedIn: false });
     }
 
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
         const user = await userModel.findOne({ userId: decoded._id }).select("email userName contactNo _id");
         if (!user) {
-            return res.status(200).json({ loggedIn: false });
+            return res.status(200).json({ isLoggedIn: false });
         }
-        return res.status(200).json({ loggedIn: true, user });
+        return res.status(200).json({ isLoggedIn: true, user });
     } catch (error) {
-        return res.status(200).json({ loggedIn: false });
+        return res.status(200).json({ isLoggedIn: false });
     }   
 }
 

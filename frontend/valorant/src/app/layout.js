@@ -1,6 +1,8 @@
+
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+import UserProvider from "./context/UserProvider"
 
 
 const geistSans = Geist({
@@ -31,7 +33,9 @@ export default function RootLayout({ children }) {
       suppressHydrationWarning
     >
       <body>
+        <UserProvider>
         {children}
+        </UserProvider>
         <Script src={navScriptSrc} strategy="afterInteractive" />
       </body>
     </html>

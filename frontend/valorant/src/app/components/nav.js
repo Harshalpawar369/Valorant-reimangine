@@ -1,6 +1,17 @@
-import "../css/style.css"
+"use client"
+import "../css/style.css";
 import Link from 'next/link';
+import { useState,useContext } from "react";
+import userContext from "../context/userContext";
+import { useRouter } from 'next/navigation';
+import axiosApi from "../api/axiosApi";
+
 function nav() {
+
+const router = useRouter();
+const { user, isLoggedIn } = useContext(userContext);
+
+
   return (
    <>
    <div className="nav">
@@ -19,7 +30,9 @@ function nav() {
          <div><Link href="/">Home</Link></div>
         <div><Link href="/about">About</Link></div>
         <div><Link href="/community">Community</Link></div>
-        <div><a href="#"> </a></div>  
+        <div>{isLoggedIn && user ?(<div className="font-[poppins] font-semibold "> {user.userName}</div>)
+      :(<button className="btn-log-in" onClick={() => router.push('/loginForm')}>Login</button>)
+      }</div>  
       
     </div>
         

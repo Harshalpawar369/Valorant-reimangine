@@ -3,6 +3,7 @@ import React from 'react'
 import { ReactLenis } from 'lenis/react';
 import './css/style.css'
 import { useGSAP } from '@gsap/react'
+import { useEffect,useState } from 'react';
 import gsap from 'gsap'
 import Navbar from "./components/nav"
 import Footer from './components/footer'
