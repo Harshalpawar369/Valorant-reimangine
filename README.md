@@ -1,51 +1,167 @@
-Tech Stack Frontend
+# Valorant Reimagine
 
-Framework: Next.js
+A modern Valorant-inspired web application featuring immersive animations, community interaction, AI-powered assistance, authentication, and media management.
 
-Animations: GSAP (gsap, @gsap/react)
+## Tech Stack
 
-Routing: React Router DOM
+### Frontend
 
-Utilities: UglifyJS
+* Next.js
+* GSAP
+* @gsap/react
+* React Router DOM
+* Lenis
+* Axios
+* UglifyJS
 
-Backend
+### Backend
 
-Runtime & Framework: Node.js, Express.js
+* Node.js
+* Express.js
+* MongoDB
+* Mongoose
 
-Database: MongoDB (Mongoose)
+### Authentication & Security
 
-Authentication & Security: JSON Web Tokens (JWT), bcrypt, CORS, cookie-parser
+* JSON Web Token (JWT)
+* bcrypt
+* CORS
+* cookie-parser
 
-File Uploads: Multer, ImageKit
+### File Upload & Media
 
-AI Integration: Langchain (OpenAI)
+* Multer
+* ImageKit
 
-Utilities: dotenv, uuid, nodemon
+### AI Integration
 
-1. Clone the Repository First, clone the project to your local machine: git clone https://github.com/Harshalpawar369/Valorant-reimangine.git cd Valorant-reimangine
+* LangChain
+* OpenAI
 
-Frontend Setup
+### Utilities
 
-cd ./frontend
+* dotenv
+* uuid
+* nodemon
 
-If generating a new Next.js app (choose 'No' for the recommended app router/src directory if prompted)
-npm create next-app .
+---
 
-Install required frontend packages
+## Installation
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/Harshalpawar369/Valorant-reimangine.git
+cd Valorant-reimangine
+```
+
+---
+
+## Frontend Setup
+
+Navigate to the frontend directory:
+
+```bash
+cd frontend
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+If dependencies are missing, install them manually:
+
+```bash
 npm install gsap @gsap/react react-router-dom uglify-js lenis axios
+```
 
-Backend Setup cd ./backend
+Start the frontend:
 
-Install dependencies
-npm i node npm i express dotenv cookie-parser jsonwebtoken bcrypt mongoose cors multer uuid imagekit langchain @langchain/openai
+```bash
+npm run dev
+```
 
-Install nodemon for development (optional but recommended)
+---
+
+## Backend Setup
+
+Navigate to the backend directory:
+
+```bash
+cd backend
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Or install manually:
+
+```bash
+npm install express dotenv cookie-parser jsonwebtoken bcrypt mongoose cors multer uuid imagekit langchain @langchain/openai
+```
+
+Install Nodemon:
+
+```bash
 npm install nodemon --save-dev
+```
 
-4. Environment Variables Create a .env file in your backend directory and add your secret keys for MongoDB, JWT, ImageKit, and OpenAI.
+Start the backend:
 
-5. Run the Application Start both the frontend and backend servers to run the application locally.
+```bash
+npm start
+```
 
-Frontend: npm run dev
+or
 
-Backend: npm start (or nodemon index.js)
+```bash
+npx nodemon index.js
+```
+
+---
+
+## Environment Variables
+
+Create a `.env` file inside the backend directory.
+
+```env
+PORT=8000
+
+MONGODB_URI=your_mongodb_connection_string
+
+JWT_SECRET=your_jwt_secret
+
+IMAGEKIT_PUBLIC_KEY=your_imagekit_public_key
+IMAGEKIT_PRIVATE_KEY=your_imagekit_private_key
+IMAGEKIT_URL_ENDPOINT=your_imagekit_url_endpoint
+
+OPENAI_API_KEY=your_openai_api_key
+```
+
+---
+
+## Features
+
+* Secure user authentication
+* JWT-based authorization
+* Community page with smooth GSAP animations
+* AI-powered Valorant assistant
+* Image uploads with ImageKit
+* MongoDB data persistence
+* Responsive design
+* Smooth scrolling with Lenis
+* Interactive UI inspired by Valorant
+
+---
+
+## Author
+
+Harshal Pawar
+
+GitHub:
+https://github.com/Harshalpawar369
