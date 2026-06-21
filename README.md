@@ -32,7 +32,7 @@ If generating a new Next.js app (choose 'No' for the recommended app router/src 
 npm create next-app .
 
 Install required frontend packages
-npm install gsap @gsap/react react-router-dom uglify-js
+npm install gsap @gsap/react react-router-dom uglify-js lenis axios
 
 Backend Setup cd ./backend
 
