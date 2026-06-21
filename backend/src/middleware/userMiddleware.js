@@ -13,7 +13,8 @@ async function userMiddleware(req, res, next) {
   const tryUserToken = async () => {
     if (!userToken) return false;
     const decoded = jwt.verify(userToken, process.env.JWT_SECRET);
-    const user = await userModel.findOne({ userId: decoded._id });
+ 
+   const user = await userModel.findById(decoded.userId);
     if (user) {
       req.user = user;
       req.role = "user";

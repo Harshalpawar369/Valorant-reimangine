@@ -1,35 +1,28 @@
-const { generateChatReply } = require('../services/aiService.js');
+const { chat } = require("../services/aiService");
 
-async function chat(req, res) {
+const chatController = async (req, res) => {
   try {
-    const { message, history, sessionId } = req.body;
-    const result = await generateChatReply({ message, history, sessionId });
+    const { userInput } = req.body;
 
-    if (!req.body.sessionId && result.sessionId) {
-      res.cookie('aiSessionId', result.sessionId, {
-        httpOnly: true,
-        sameSite: 'lax',
-        maxAge: 1000 * 60 * 60 * 24,
-      });
-    }
+    const userId = req._id;
+
+    const response = await askAI(
+      userId,
+      userInput
+    );
 
     return res.status(200).json({
-      message: result.reply,
-      sessionId: result.sessionId,
-      model: result.model,
+      success: true,
+      response,
     });
   } catch (error) {
-    const statusCode = error.statusCode || 500;
-
-    return res.status(statusCode).json({
-      message:
-        statusCode === 400
-          ? error.message
-          : 'AI service is unavailable right now',
+    return res.status(500).json({
+      success: false,
+      message: error.message,
     });
   }
-}
+};
 
 module.exports = {
-  chat,
+  chatController,
 };

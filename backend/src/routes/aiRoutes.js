@@ -1,9 +1,18 @@
-const express = require('express');
-const aiController = require('../controllers/aiControllers.js');
+const express = require("express");
 
 const router = express.Router();
 
-router.post('/', aiController.chat);
-router.post('/chat', aiController.chat);
+const {userMiddleware,} = require("../middleware/userMiddleware");
+
+const { askAiMiddleware } = require("../middleware/aiMiddleware");
+
+const {  chatController } = require("../controllers/aiControllers");
+
+router.post(
+  "/ai",
+  userMiddleware,
+  askAiMiddleware,
+chatController,
+);
 
 module.exports = router;
